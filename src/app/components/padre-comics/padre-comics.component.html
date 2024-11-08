@@ -1,0 +1,21 @@
+<div class="p-5">
+    <h1>Padre Comics</h1>
+    <h2 style="background-color: yellow;">{{mensaje}}</h2>
+    <form class="form" (ngSubmit)="crearComic($event)" #form="ngForm">
+        <label class="form-label">Nombre: </label>
+        <input class="form-control" name="cajanombre" #cajanombre/><br>
+        <label class="form-label">Imagen: </label>
+        <input class="form-control" name="cajaimagen" #cajaimagen/><br>
+        <label class="form-label">Personaje: </label>
+        <input class="form-control" name="cajapersonaje" #cajapersonaje/><br>
+        <button class="btn btn-success">Crear Comic</button>
+    </form>
+    
+    <ul>
+        <li *ngFor="let comic of comics">
+            <app-hijo-comic [comic]="comic" 
+            (seleccionarFavoritoPadre)="seleccionarFavoritoPadre($event)">
+        </app-hijo-comic>
+        </li>
+    </ul>
+</div>
