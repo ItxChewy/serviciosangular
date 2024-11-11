@@ -32,7 +32,7 @@ export class PlantillaFuncionMultipleComponent implements OnInit {
       }
     }
     this.funcionesSeleccionadas = aux;
-    this._service.getPlantillaFuncionesMultiples(this.funciones).subscribe(response =>{
+    this._service.getPlantillaFuncionesMultiples(aux).subscribe(response =>{
       this.empleados = response
     })
   }
