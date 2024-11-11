@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicePersonas } from '../../services/service.personas';
 import { Personas } from '../../../models/persona';
-
+import { ServicePersonas } from '../../services/service.personas';
+import { NgFor, NgIf } from '@angular/common';
 @Component({
-  selector: 'app-personas-api',
-  templateUrl: './personas-api.component.html',
-  styleUrl: './personas-api.component.css'
+  selector: 'app-personas-standalone',
+  templateUrl: './personas-standalone.component.html',
+  standalone:true,
+  imports:[NgFor,NgIf],
+  providers:[ServicePersonas]
 })
-export class PersonasApiComponent implements OnInit {
-  
+export class PersonasStandaloneComponent implements OnInit {
   public personas!:Array<Personas>
   constructor(private _service: ServicePersonas){}
 
@@ -24,5 +25,5 @@ export class PersonasApiComponent implements OnInit {
       this.personas = response;
     })
 
-  }
+}
 }

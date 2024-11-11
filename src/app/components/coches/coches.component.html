@@ -1,0 +1,11 @@
+<div class="p-5">
+    @for(car of coches; track car){
+        <div class="card p-2 m-5" style="width: 18rem;">
+            <img src={{car.imagen}} class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{car.marca}} {{car.modelo}}</h5>
+              <p class="card-text">Conductor: {{car.conductor}}</p>
+            </div>
+          </div>
+    }
+</div>

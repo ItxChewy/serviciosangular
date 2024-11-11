@@ -1,0 +1,29 @@
+<div class="p-5">
+    <h1>Plantillas Multiple</h1>
+    <form class="form">
+        <label class="form-label">Seleccione funcion</label>
+        <select class="form-select" #selectfunciones name="selectfunciones" multiple>
+            @for(funcion of funciones;track funcion){
+            <option class="form-control">
+                {{funcion}}
+            </option>
+            }
+        </select><br>
+        <button class="btn btn-sm btn-danger" (click)="getEmpleados()">Mostrar</button>
+    </form>
+    @if(empleados){
+    <div class="p-2">
+        @for(emp of empleados;track emp){
+        <div class="card p-2 m-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{emp.apellido}}</h5>
+                <p class="card-text">Funcion: {{emp.funcion}}</p>
+                <p class="card-text">Turno: {{emp.turno}}</p>
+                <p class="card-text">Salario: {{emp.salario}}</p>
+            </div>
+        </div>
+        }
+    </div>
+    }
+
+</div>
